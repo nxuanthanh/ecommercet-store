@@ -1,0 +1,140 @@
+@use "scss" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 62.5%;
+
+  @include tablet {
+    font-size: 50%;
+  }
+
+  @include mobile {
+    font-size: 37.5%;
+  }
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+
+  background-color: $body-bg;
+  color: $txt-color;
+
+  @include mobile {
+    margin-bottom: 3rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+@media (hover: hover) {
+  a:hover {
+    transition: color 0.2s ease;
+    color: $main-color;
+  }
+}
+
+@each $color, $val in $colors {
+  .color-#{$color} {
+    color: $val;
+  }
+
+  .bg-#{$color} {
+    background-color: $val;
+  }
+}
+
+@each $val in $numbers {
+  .grid-col-#{$val} {
+    grid-template-columns: repeat($val, 1fr);
+  }
+}
+
+@each $val in $numbers {
+  .grid-col-md-#{$val} {
+    @include tablet {
+      grid-template-columns: repeat($val, 1fr);
+    }
+  }
+}
+
+@each $val in $numbers {
+  .grid-col-sm-#{$val} {
+    @include mobile {
+      grid-template-columns: repeat($val, 1fr);
+    }
+  }
+}
+
+button,
+input {
+  outline: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1620px;
+  margin: auto;
+  padding: 0 5rem;
+
+  @include tablet {
+    padding: 0 2rem;
+  }
+
+  @include mobile {
+    padding: 0 1rem;
+  }
+}
+
+.main {
+  margin-top: $header-height;
+  margin-bottom: 2rem;
+  min-height: 100vh;
+
+  @include tablet {
+    margin-top: calc(#{$header-tablet-height} + 2rem);
+  }
+
+  @include mobile {
+    margin-top: calc(#{$header-mobile-height} + 1rem);
+  }
+}
+
+.grid {
+  display: grid;
+}
+
+.mb-3 {
+  margin-bottom: 3rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.section {
+  padding: 0 6rem;
+}
