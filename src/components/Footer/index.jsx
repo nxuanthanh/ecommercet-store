@@ -8,7 +8,7 @@ function Footer(props) {
   return (
     <footer className="footer">
       <div className="container">
-        <Grid col={4} mdColumn={2} smCol={1} gap={10}>
+        <Grid col={4} mdCol={2} smCol={1} gap={10}>
           <div>
             <div className="footer__title">Tổng đài hổ trợ</div>
             <div className="footer__content">

@@ -5,8 +5,8 @@ function Grid(props) {
   const { col, mdCol, smCol, gap, children } = props;
 
   const column = col ? `grid-col-${col}` : "";
-  const mdColumn = mdCol ? `grid-col-${mdCol}` : "";
-  const smColumn = smCol ? `grid-col-${smCol}` : "";
+  const mdColumn = mdCol ? `grid-col-md-${mdCol}` : "";
+  const smColumn = smCol ? `grid-col-sm-${smCol}` : "";
 
   return (
     <div
