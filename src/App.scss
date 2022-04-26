@@ -38,6 +38,10 @@ a {
   color: unset;
 }
 
+img {
+  max-width: 100%;
+}
+
 @media (hover: hover) {
   a:hover {
     transition: color 0.2s ease;
