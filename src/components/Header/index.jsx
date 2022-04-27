@@ -1,43 +1,34 @@
-import React, { useEffect, useRef } from "react";
-import { NavLink, useLocation } from "react-router-dom";
-import "./header.scss";
-import logo from "assets/images/Logo-2.png";
+import logo from 'assets/images/Logo-2.png';
+import React, { useEffect, useRef } from 'react';
+import { NavLink } from 'react-router-dom';
+import './header.scss';
 
 function Header(props) {
-  const { pathname } = useLocation();
   const headerRef = useRef();
   const menuRef = useRef();
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (
-        document.body.scrollTop > 80 ||
-        document.documentElement.scrollTop > 80
-      ) {
-        headerRef.current.classList.add("shrink");
+    window.addEventListener('scroll', () => {
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        headerRef.current.classList.add('shrink');
       } else {
-        headerRef.current.classList.remove("shrink");
+        headerRef.current.classList.remove('shrink');
       }
     });
     return () => {
-      window.removeEventListener("scroll");
+      window.removeEventListener('scroll');
     };
   }, []);
 
   const menuToggle = () => {
-    menuRef.current.classList.toggle("active");
+    menuRef.current.classList.toggle('active');
   };
 
   return (
     <div className="header" ref={headerRef}>
       <div className="container">
         <div className="header__logo">
-          <NavLink
-            className={({ isActive }) =>
-              "nav-link" + (isActive ? " activated" : "")
-            }
-            to="/"
-          >
+          <NavLink className={({ isActive }) => 'nav-link' + (isActive ? ' activated' : '')} to="/">
             <img src={logo} alt="logo" />
           </NavLink>
         </div>
@@ -52,9 +43,7 @@ function Header(props) {
             <div className="header__menu__left__item header__menu__item">
               <NavLink
                 onClick={menuToggle}
-                className={({ isActive }) =>
-                  "nav-link" + (isActive ? " activated" : "")
-                }
+                className={({ isActive }) => 'nav-link' + (isActive ? ' activated' : '')}
                 to="/"
               >
                 <span>Trang chủ</span>
@@ -63,9 +52,7 @@ function Header(props) {
             <div className="header__menu__left__item header__menu__item">
               <NavLink
                 onClick={menuToggle}
-                className={({ isActive }) =>
-                  "nav-link" + (isActive ? " activated" : "")
-                }
+                className={({ isActive }) => 'nav-link' + (isActive ? ' activated' : '')}
                 to="catalog"
               >
                 <span>Sản phẩm</span>
@@ -74,9 +61,7 @@ function Header(props) {
             <div className="header__menu__left__item header__menu__item">
               <NavLink
                 onClick={menuToggle}
-                className={({ isActive }) =>
-                  "nav-link" + (isActive ? " activated" : "")
-                }
+                className={({ isActive }) => 'nav-link' + (isActive ? ' activated' : '')}
                 to="/accessories"
               >
                 <span>Phụ kiện</span>
@@ -85,9 +70,7 @@ function Header(props) {
             <div className="header__menu__left__item header__menu__item">
               <NavLink
                 onClick={menuToggle}
-                className={({ isActive }) =>
-                  "nav-link" + (isActive ? " activated" : "")
-                }
+                className={({ isActive }) => 'nav-link' + (isActive ? ' activated' : '')}
                 to="/contact"
               >
                 <span>Liên hệ</span>
@@ -101,9 +84,7 @@ function Header(props) {
             <div className="header__menu__right__item header__menu__item">
               <NavLink
                 onClick={menuToggle}
-                className={({ isActive }) =>
-                  "nav-link" + (isActive ? " activated" : "")
-                }
+                className={({ isActive }) => 'nav-link' + (isActive ? ' activated' : '')}
                 to="cart"
               >
                 <i className="bx bx-shopping-bag"></i>

@@ -1,15 +1,15 @@
-import heroSlideData from "assets/fake-data/hero-slider";
-import policy from "assets/fake-data/policy";
-import Grid from "components/Grid";
-import Helmet from "components/Helmet";
-import PolicyCart from "features/Cart/PolicyCart";
-import HeroSlide from "features/HeroSlide";
-import Section, { SectionBody, SectionTitle } from "features/Section";
-import React from "react";
-import { Link } from "react-router-dom";
-import productData from "assets/fake-data/products";
-import ProductCart from "features/Cart/ProductCart";
-import banner from "assets/images/banner.png";
+import heroSlideData from 'assets/fake-data/hero-slider';
+import policy from 'assets/fake-data/policy';
+import Grid from 'components/Grid';
+import Helmet from 'components/Helmet';
+import PolicyCart from 'features/Cart/components/PolicyCart';
+import HeroSlide from 'features/HeroSlide';
+import Section, { SectionBody, SectionTitle } from 'features/Section';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import productData from 'assets/fake-data/products';
+import banner from 'assets/images/banner.png';
+import ProductCart from 'features/Cart/components/ProductCart';
 function Home(props) {
   const sellingProducts = productData.getProducts(4);
   const newProducts = productData.getProducts(8);
@@ -28,11 +28,7 @@ function Home(props) {
           <Grid col={4} md={2} smCol={1} gap={20}>
             {policy.map((item, index) => (
               <Link to="policy" key={index}>
-                <PolicyCart
-                  name={item.name}
-                  icon={item.icon}
-                  description={item.description}
-                />
+                <PolicyCart name={item.name} icon={item.icon} description={item.description} />
               </Link>
             ))}
           </Grid>

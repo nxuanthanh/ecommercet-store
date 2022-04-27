@@ -1,6 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
-import "./not-found.scss";
+import React from 'react';
+import './not-found.scss';
 
 function NotFound(props) {
   return <div>NotFound</div>;

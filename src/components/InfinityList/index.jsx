@@ -1,8 +1,8 @@
-import Grid from "components/Grid";
-import ProductCart from "features/Cart/ProductCart";
-import PropTypes from "prop-types";
-import React, { useEffect, useRef, useState } from "react";
-import "./infinity-list.scss";
+import Grid from 'components/Grid';
+import ProductCart from 'features/Cart/components/ProductCart';
+import PropTypes from 'prop-types';
+import React, { useEffect, useRef, useState } from 'react';
+import './infinity-list.scss';
 
 function InfinityList(props) {
   const perLoad = 6;
@@ -18,13 +18,13 @@ function InfinityList(props) {
   }, [props.data]);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    window.addEventListener('scroll', () => {
       if (listRef && listRef.current) {
         if (
           window.scrollY + window.innerHeight >=
           listRef.current.clientHeight + listRef.current.offsetTop + 200
         ) {
-          console.log("bottom reach");
+          console.log('bottom reach');
           setLoad(true);
         }
       }

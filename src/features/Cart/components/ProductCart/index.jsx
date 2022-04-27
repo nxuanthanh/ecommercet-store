@@ -1,12 +1,21 @@
-import Button from "components/Button";
-import PropTypes from "prop-types";
-import React from "react";
-import { Link } from "react-router-dom";
-import { formatPrice } from "utils";
-import "./product-cart.scss";
+import Button from 'components/Button';
+import { add } from 'features/Products/productSlice';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { formatPrice } from 'utils';
+import './product-cart.scss';
 
 function ProductCart(props) {
   const { img1, img2, name, price, slug } = props;
+
+  const dispatch = useDispatch();
+
+  const handleBuyClick = () => {
+    dispatch(add(slug));
+  };
+
   return (
     <div className="product-cart">
       <Link to={`/catalog/${slug}`}>
@@ -23,7 +32,7 @@ function ProductCart(props) {
         </div>
       </Link>
       <div className="product-cart__btn">
-        <Button size="sm" icon="bx bx-cart" animate={true}>
+        <Button size="sm" icon="bx bx-cart" animate={true} onClick={handleBuyClick}>
           Chọn mua
         </Button>
       </div>

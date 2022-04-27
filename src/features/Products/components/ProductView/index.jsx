@@ -1,11 +1,15 @@
 import Button from 'components/Button';
+import { addItem } from 'features/Cart/components/ShoppingCart/cartItemSlice';
+import { remove } from 'features/Products/productSlice';
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { formatPrice } from 'utils';
 import './product-view.scss';
 
 function ProductView({ product }) {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [previewImg, setPreviewImg] = useState(product.image01);
   const [descriptionExpand, setDescriptionExpand] = useState(false);
@@ -37,12 +41,31 @@ function ProductView({ product }) {
 
   const addToCart = () => {
     if (check()) {
-      console.log(size);
+      const action = addItem({
+        slug: product.slug,
+        color: color,
+        size: size,
+        quantity: quantity,
+        price: product.price,
+      });
+
+      dispatch(action);
+      alert('success');
     }
   };
 
   const goToCart = () => {
     if (check()) {
+      const action = addItem({
+        slug: product.slug,
+        color: color,
+        size: size,
+        quantity: quantity,
+        price: product.price,
+      });
+
+      dispatch(action);
+      dispatch(remove());
       navigate('/cart');
     }
   };
@@ -50,8 +73,8 @@ function ProductView({ product }) {
   useEffect(() => {
     setPreviewImg(product.image01);
     setQuantity(1);
-    setColor(undefined);
-    setSize(undefined);
+    setColor();
+    setSize();
   }, [product]);
 
   return (
@@ -165,6 +188,15 @@ function ProductView({ product }) {
 
 ProductView.propTypes = {
   product: PropTypes.object.isRequired,
+};
+
+ProductView.defaultProps = {
+  product: {
+    price: 0,
+    title: '',
+    colors: [],
+    sizes: [],
+  },
 };
 
 export default ProductView;

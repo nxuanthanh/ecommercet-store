@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
-import productData from "assets/fake-data/products";
-import Helmet from "components/Helmet";
-import Section, { SectionBody, SectionTitle } from "features/Section";
-import Grid from "components/Grid";
-import ProductCart from "features/Cart/ProductCart";
-import { useParams } from "react-router-dom";
-import ProductView from "./components/ProductView";
+import productData from 'assets/fake-data/products';
+import Grid from 'components/Grid';
+import Helmet from 'components/Helmet';
+import ProductCart from 'features/Cart/components/ProductCart';
+import Section, { SectionBody, SectionTitle } from 'features/Section';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import ProductView from './components/ProductView';
 
 function Products(props) {
   const { slug } = useParams();

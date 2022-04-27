@@ -46,7 +46,7 @@
 
     &__info {
         flex-grow: 1;
-        position: sticky;
+        position: relative;
         top: $header-shrink-height;
         padding-top: 2rem;
 
