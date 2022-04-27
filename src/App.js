@@ -1,10 +1,10 @@
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 import NotFound from 'components/NotFound';
-import Cart from 'pages/Cart';
-import Catalog from 'pages/Catalog';
+import Cart from 'features/Cart';
+import Catalog from 'features/Catalog';
+import Products from 'features/Products';
 import Home from 'pages/Home';
-import Products from 'pages/Products';
 import { Outlet, Route, Routes } from 'react-router-dom';
 import './App.scss';
 

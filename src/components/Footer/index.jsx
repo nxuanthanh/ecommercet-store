@@ -1,14 +1,14 @@
-import logo from "assets/images/Logo-2.png";
-import Grid from "components/Grid";
-import React from "react";
-import { Link } from "react-router-dom";
-import "./footer.scss";
+import logo from 'assets/images/Logo-2.png';
+import Grid from 'components/Grid';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './footer.scss';
 
 function Footer(props) {
   return (
     <footer className="footer">
       <div className="container">
-        <Grid col={4} mdCol={2} smCol={1} gap={10}>
+        <Grid col={4} mdCol={2} smCol={2} gap={10}>
           <div>
             <div className="footer__title">Tổng đài hổ trợ</div>
             <div className="footer__content">
@@ -64,9 +64,8 @@ function Footer(props) {
               </Link>
             </p>
             <p>
-              Hướng đến mục tiêu mang lại niềm vui ăn mặc mới mỗi ngày cho hàng
-              triệu người tiêu dùng Việt. Hãy cùng Yolo hướng đến một cuộc sống
-              năng động tích cực hơn.
+              Hướng đến mục tiêu mang lại niềm vui ăn mặc mới mỗi ngày cho hàng triệu người tiêu
+              dùng Việt. Hãy cùng Yolo hướng đến một cuộc sống năng động tích cực hơn.
             </p>
           </div>
         </Grid>

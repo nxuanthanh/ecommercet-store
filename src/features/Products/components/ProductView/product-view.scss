@@ -1,0 +1,193 @@
+@use "scss" as *;
+
+.product {
+    @include flex(flex-start, flex-start);
+
+    @include mobile {
+        flex-direction: column;
+    }
+
+    &__images {
+        @include flex(flex-start, flex-start);
+
+        width: 60%;
+        flex-wrap: wrap;
+
+        @include tablet {
+            width: 80%;
+        }
+
+        @include mobile {
+            width: 100%;
+        }
+
+        &__list {
+            width: 20%;
+
+            &__item {
+                cursor: pointer;
+            }
+        }
+
+        &__main {
+            flex-grow: 1;
+            padding-top: 100%;
+            position: relative;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                height: 100%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    &__info {
+        flex-grow: 1;
+        position: sticky;
+        top: $header-shrink-height;
+        padding-top: 2rem;
+
+        @include mobile {
+            position: relative;
+            top: unset;
+        }
+
+        &__title {
+            font-size: 2.6rem;
+            font-weight: normal;
+        }
+
+        &__item {
+            margin-top: 2rem;
+
+            &__price {
+                color: $main-color;
+                font-size: 2rem;
+                font-weight: 600;
+            }
+
+            &__title {
+                font-size: 1.6rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+            }
+
+            &__list {
+                @include flex(center, flex-start);
+
+                &__item {
+                    @include flex(center, center);
+                    width: 5rem;
+                    height: 5rem;
+                    border-radius: 50%;
+                    border: 2px solid $txt-second-color;
+                    cursor: pointer;
+                    margin-right: 1rem;
+
+                    &.active {
+                        border-color: $main-color;
+                    }
+
+                    &:hover {
+                        border-color: $main-color;
+                    }
+
+                    .circle {
+                        width: 4rem;
+                        height: 4rem;
+                        border-radius: 50%;
+                    }
+
+                    &__size {
+                        font-size: 1.6rem;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+
+            &__quantity {
+                @include flex(flex-start, flex-start);
+
+                &__btn {
+                    @include flex(center, center);
+
+                    width: 3rem;
+                    height: 3rem;
+                    border: 2px solid $txt-second-color;
+                    font-size: 1.6rem;
+                    cursor: pointer;
+                }
+
+                &__input {
+                    @include flex(center, center);
+
+                    height: 3rem;
+                    width: 9rem;
+                    font-size: 1.6rem;
+                    border-top: 2px solid $txt-second-color;
+                    border-bottom: 2px solid $txt-second-color;
+                }
+            }
+
+            button {
+                margin-right: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    &__description {
+        width: 100%;
+        padding: 2rem 2rem 3rem;
+        height: 40rem;
+        overflow: hidden;
+        position: relative;
+
+        &.mobile {
+            display: none;
+
+            .product__description__title {
+                font-size: 2rem;
+            }
+
+            .product__description__content {
+                font-size: 1.6rem;
+                line-height: 2rem;
+            }
+
+            @include mobile {
+                display: block;
+            }
+        }
+
+        @include mobile {
+            display: none;
+        }
+
+        &.expand {
+            height: max-content;
+        }
+
+        &__title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 2rem 0;
+        }
+
+        &__content {
+            font-size: 1.25rem;
+            line-height: 1.875rem;
+            text-align: justify;
+        }
+
+        &__toggle {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}

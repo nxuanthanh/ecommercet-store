@@ -1,15 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
-import "./product-cart.scss";
-import { Link } from "react-router-dom";
 import Button from "components/Button";
+import PropTypes from "prop-types";
+import React from "react";
+import { Link } from "react-router-dom";
 import { formatPrice } from "utils";
+import "./product-cart.scss";
 
 function ProductCart(props) {
   const { img1, img2, name, price, slug } = props;
   return (
     <div className="product-cart">
-      <Link to={`catalog/${slug}`}>
+      <Link to={`/catalog/${slug}`}>
         <div className="product-cart__image">
           <img src={img1} alt="img1" />
           <img src={img2} alt="img2" />

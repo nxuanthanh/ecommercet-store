@@ -20,7 +20,7 @@ function Home(props) {
       <HeroSlide
         data={heroSlideData}
         control={true}
-        auto={true}
+        // auto={true}
         timeOut={5000}
       />
       <Section>

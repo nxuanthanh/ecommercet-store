@@ -82,7 +82,6 @@ function HeroSlideItem({ item, active }) {
               backgroundColor={item.color}
               icon="bx bx-cart"
               animate={true}
-              //   size="md"
             >
               Xem chi tiết
             </Button>

@@ -1,17 +1,19 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
-function Helmet({ title = "", children }) {
+function Helmet({ title = '', children }) {
   document.title = `Yolo - ${title}`;
-  return <div>{children}</div>;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return <>{children}</>;
 }
 
 Helmet.propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
 };
 
 export default Helmet;
