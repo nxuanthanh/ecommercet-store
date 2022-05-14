@@ -1,0 +1,17 @@
+@use "scss" as *;
+
+.not-found {
+    height: 90vh;
+    @include flex(center, center);
+    flex-direction: column;
+    background-color: rgb(247, 247, 247);
+
+    &__img {
+        width: 60rem;
+    }
+
+    & .link-home {
+        font-size: 2rem;
+        color: $main-color;
+    }
+}

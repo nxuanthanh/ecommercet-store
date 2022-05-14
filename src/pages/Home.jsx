@@ -17,12 +17,7 @@ function Home(props) {
 
   return (
     <Helmet title="Trang chủ">
-      <HeroSlide
-        data={heroSlideData}
-        control={true}
-        // auto={true}
-        timeOut={5000}
-      />
+      <HeroSlide data={heroSlideData} control={true} auto={true} timeOut={5000} />
       <Section>
         <SectionBody>
           <Grid col={4} md={2} smCol={1} gap={20}>

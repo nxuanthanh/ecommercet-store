@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
+import cartItemsReducer from 'features/Cart/cartItemSlice';
 import productModalReducer from 'features/Products/productSlice';
-import cartItemsReducer from 'features/Cart/components/ShoppingCart/cartItemSlice';
 
 const rootReducer = {
   productModal: productModalReducer,

@@ -1,5 +1,5 @@
 import Button from 'components/Button';
-import { addItem } from 'features/Cart/components/ShoppingCart/cartItemSlice';
+import { addItem } from 'features/Cart/cartItemSlice';
 import { remove } from 'features/Products/productSlice';
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
@@ -11,10 +11,11 @@ import './product-view.scss';
 function ProductView({ product }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const [previewImg, setPreviewImg] = useState(product.image01);
   const [descriptionExpand, setDescriptionExpand] = useState(false);
-  const [color, setColor] = useState(undefined);
-  const [size, setSize] = useState(undefined);
+  const [color, setColor] = useState();
+  const [size, setSize] = useState();
   const [quantity, setQuantity] = useState(1);
 
   const updateQuantity = (type) => {

@@ -19,9 +19,7 @@ function Cart(props) {
   useEffect(() => {
     setCartProducts(productData.getCartItemsDetail(cartItems));
     setTotalProducts(cartItems.reduce((total, curr) => total + Number(curr.quantity), 0));
-    setTotalPrice(
-      cartItems.reduce((total, curr) => total + Number(curr.quantity) * Number(curr.price), 0)
-    );
+    setTotalPrice(cartItems.reduce((total, curr) => total + Number(curr.quantity) * curr.price, 0));
   }, [cartItems]);
 
   return (

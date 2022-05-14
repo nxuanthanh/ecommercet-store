@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { formatPrice } from 'utils';
-import { removeItem, updateItem } from '../components/ShoppingCart/cartItemSlice';
+import { removeItem, updateItem } from '../cartItemSlice';
 
 function CartItem({ cart }) {
   const dispatch = useDispatch();

@@ -10,7 +10,7 @@ const findItem = (arr, item) =>
 const delItem = (arr, item) =>
   arr.filter((e) => e.slug !== item.slug || e.color !== item.color || e.size !== item.size);
 
-const sortItem = (arr) => arr.sort((a, b) => (a.id > b.id ? 1 : a.id < b.id ? -1 : 0));
+const sortItem = (arr) => arr.sort((a, b) => a.id > b.id);
 
 const cartItemsSlice = createSlice({
   name: 'cartItems',

@@ -1,11 +1,15 @@
 import logo from 'assets/images/Logo-2.png';
+import { cartCountSelector } from 'features/Cart/cartSelecor';
 import React, { useEffect, useRef } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { Link, NavLink } from 'react-router-dom';
 import './header.scss';
 
 function Header(props) {
   const headerRef = useRef();
   const menuRef = useRef();
+
+  const totalCart = useSelector(cartCountSelector);
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -28,7 +32,7 @@ function Header(props) {
     <div className="header" ref={headerRef}>
       <div className="container">
         <div className="header__logo">
-          <NavLink className={({ isActive }) => 'nav-link' + (isActive ? ' activated' : '')} to="/">
+          <NavLink to="/">
             <img src={logo} alt="logo" />
           </NavLink>
         </div>
@@ -87,11 +91,15 @@ function Header(props) {
                 className={({ isActive }) => 'nav-link' + (isActive ? ' activated' : '')}
                 to="cart"
               >
-                <i className="bx bx-shopping-bag"></i>
+                <div className="cart__box" data-duration={totalCart}>
+                  <i className="bx bx-cart"></i>
+                </div>
               </NavLink>
             </div>
             <div className="header__menu__right__item header__menu__item">
-              <i className="bx bx-user"></i>
+              <Link to="sign-in">
+                <i className="bx bx-user"></i>
+              </Link>
             </div>
           </div>
         </div>
